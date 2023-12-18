@@ -2,10 +2,6 @@ import Serums from "./serums";
 import data from "./data.js";
 import React from "react";
 import { Link } from "react-router-dom";
-import delivery from "/dist/assets/images/delivery.png";
-import payment from "/dist/assets/images/payment.png";
-import policy from "/dist/assets/images/return.png";
-
 export default function Products() {
   console.log(data[0].id);
   const serums = data.map((data) => {
@@ -28,7 +24,7 @@ export default function Products() {
       <div className="flex flex-col justify-center items-center mt-10 md:flex-row">
         <div className="flex flex-col justify-center items-center md:flex-row md:mt-24 border-b border-t pt-7 pb-5 border-black">
           <div className="flex m-3 mx-10 items-center mt-24 md:mt-0">
-            <img src={delivery} alt="" />
+            <img src="/images/delivery.png" alt="" />
             <h2
               className="text-2xl font-medium min-w-full
           mx-5"
@@ -38,12 +34,12 @@ export default function Products() {
           </div>
 
           <div className="flex m-3 mx-10 ">
-            <img src={payment} alt="" />
+            <img src="/images/payment.png" alt="" />
             <h2 className="text-2xl font-medium mx-5">Secure Payments</h2>
           </div>
 
           <div className="flex m-3 mx-10 justify-center">
-            <img src={policy} alt="" />
+            <img src="/images/return.png" alt="" />
             <h2 className="text-2xl font-medium mx-5">Return Policy</h2>
           </div>
         </div>

@@ -1,18 +1,15 @@
-import smooth from "/dist/assets/images/smooth.webp";
-import texture from "/dist/assets/images/smooth.png";
-
 export default function () {
   return (
     <div>
       <div className="p-3 m-3 flex flex-col justify-center items-center relative">
         <div className="relative mt-32 md:mb-28 max-w-2xl">
-          <img src={smooth} alt="" className="" />
+          <img src="/images/texture.webp" alt="" className="" />
         </div>
         <h1 className="text-6xl mt-10 text-center mx-auto text-[#c49358] uppercase font-semibold absolute top-0 left-0 right-0 md:top-16">
           *soothing texture*
         </h1>
         <img
-          src={texture}
+          src="/images/smooth2.webp"
           alt=""
           className="absolute w-48 top-12 -right-3 hidden md:flex rounded-tl-full rounded-bl-full"
         />

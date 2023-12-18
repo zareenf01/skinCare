@@ -1,12 +1,9 @@
-import sideImg from "/dist/assets/images/side-img.jpg";
-import heroFaceImg from "/dist/assets/images/hero-face.jpg";
-
 export default function Hero() {
   return (
     <div className="bg-black">
       <div className=" flex flex-col justify-center items-center m-3 mt-32 md:mt-48 md:flex-row md:space-x-20">
         <img
-          src={sideImg}
+          src="/images/side-img.webp"
           alt=""
           className="hidden w-40 absolute top-48 left-0 rounded-tr-full rounded-br-full md:flex"
         />
@@ -20,7 +17,7 @@ export default function Hero() {
         </div>
 
         <img
-          src={heroFaceImg}
+          src="/images/hero-face.jpeg"
           alt=""
           className="w-80 rounded-full relative md:w-96"
         />

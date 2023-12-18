@@ -1,4 +1,3 @@
-import footer from "/dist/assets/images/footer.png";
 export default function Mission() {
   return (
     <div id="About">
@@ -25,7 +24,7 @@ export default function Mission() {
           </button>
         </div>
       </div>
-      <img src={footer} alt="" />
+      <img src="/images/footer.png" alt="" />
     </div>
   );
 }

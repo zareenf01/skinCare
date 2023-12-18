@@ -3,8 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import Data from "./data";
 import { ShopContext } from "./shopContext";
 import { useNavigate } from "react-router-dom";
-import otherpic from "/dist/assets/images/otherpics.jpeg";
-
 export default function Details() {
   const { addToCart, cartItems } = useContext(ShopContext);
 
@@ -42,14 +40,26 @@ export default function Details() {
               />
               <div className="flex items-center justify-center cursor-pointer mt-10">
                 <img
-                  src={otherpic}
+                  src="/images/otherpics.webp"
                   alt=""
                   srcset=""
                   className="w-16 mx-3  rounded-2xl"
                 />
-                <img src={otherpic} alt="" className="w-16 mx-3  rounded-2xl" />
-                <img src={otherpic} alt="" className="w-16 mx-3 rounded-2xl" />
-                <img src={otherpic} alt="" className="w-16 mx-3 rounded-2xl" />
+                <img
+                  src="/images/otherpics.webp"
+                  alt=""
+                  className="w-16 mx-3  rounded-2xl"
+                />
+                <img
+                  src="/images/otherpics.webp"
+                  alt=""
+                  className="w-16 mx-3 rounded-2xl"
+                />
+                <img
+                  src="/images/otherpics.webp"
+                  alt=""
+                  className="w-16 mx-3 rounded-2xl"
+                />
               </div>
             </div>
 
@@ -81,9 +91,7 @@ export default function Details() {
                   wishlist
                   <img
                     src={
-                      wishlist
-                        ? "/dist/assets/images/onclick.png"
-                        : "/dist/assets/images/wishlist.png"
+                      wishlist ? "/images/onclick.png" : "/images/wishlist.png"
                     }
                     alt=""
                     className="mx-2"

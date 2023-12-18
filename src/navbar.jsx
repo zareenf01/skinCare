@@ -1,8 +1,4 @@
 import { Link } from "react-router-dom";
-import user from "/dist/assets/images/user.png";
-import logo from "/dist/assets/images/logo-no-background.png";
-import fav from "/dist/assets/images/fav.png";
-import cart from "/dist/assets/images/cart.png";
 
 export default function Navbar() {
   return (
@@ -10,17 +6,17 @@ export default function Navbar() {
       <div className="flex flex-col p-5 m-3 justify-between  md:flex-row md:items-center">
         <div className="flex justify-between items-center p-1 m-2">
           <Link to="/">
-            <img src={logo} alt="" className="w-40 mt-3" />
+            <img src="/images/logo.png" alt="" className="w-44 mt-3" />
           </Link>
 
           <div className=" flex p-1 rounded-full md:hidden cursor-pointer">
             <Link to="/signup">
-              <img src={user} alt="" className="mx-2" />
+              <img src="/images/user.png" alt="" className="mx-2" />
             </Link>
-            <img src={fav} alt="" className="mx-2" />
+            <img src="/images/fav.png" alt="" className="mx-2" />
 
             <Link to="/cart">
-              <img src={cart} alt="" className="mx-2" />
+              <img src="/images/cart.png" alt="" className="mx-2" />
             </Link>
           </div>
         </div>
@@ -53,11 +49,11 @@ export default function Navbar() {
         </div>
         <div className=" p-1 rounded-full hidden md:flex cursor-pointer">
           <Link to="/signup">
-            <img src={user} alt="" className="mx-4" />
+            <img src="/images/user.png" alt="" className="mx-4" />
           </Link>
-          <img src={fav} alt="" className="mx-4" />
+          <img src="/images/fav.png" alt="" className="mx-4" />
           <Link to="/cart">
-            <img src={cart} alt="" className="mx-4" />
+            <img src="/images/cart.png" alt="" className="mx-4" />
           </Link>
         </div>
       </div>

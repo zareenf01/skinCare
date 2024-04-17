@@ -19,5 +19,17 @@ Skincare is a React-based web application dedicated to skincare products, routin
 ## Installation
 
 1. Clone the repository:
+   
    ```bash
    git clone https://github.com/zareenf01/skinCare.git
+
+2. Install Dependencies:
+   
+   ```
+   npm install
+   ```
+3. Run the Server on localhost
+   
+   ```
+   npm run dev
+   ```

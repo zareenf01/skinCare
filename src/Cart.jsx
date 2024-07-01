@@ -52,10 +52,10 @@ export default function Cart() {
     <div className="flex flex-col m-5 p-5 px-6 md:flex-row md:justify-between md:items-start md:-mt-12">
       <div>
         <h1 className="text-[#f2c48b] text-3xl font-bold">Bag</h1>
-        {cart.length > 0 ? (
+        { cart.length > 0 ? (
           <div className="m-6 max-w-xs  text-white">{cart}</div>
         ) : (
-          <h3 className="text-white text-xl mt-5">Oops! Your bag is empty</h3>
+          <h3 className="text-white text-xl mt-5">Oops! Your bag is empty...</h3>
         )}
       </div>
 

@@ -43,7 +43,6 @@ export default function Cart() {
 
       return null;
     });
-     .filter((item) => item !== null);
 
     setCart(updatedCart);
     setSubtotal(total);

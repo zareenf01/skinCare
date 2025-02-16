@@ -1,20 +1,31 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function SignUp() {
-  const HandleClick = () => {
+  const HandleClick = async (e) => {
+    e.preventDefault();
+
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    console.log(name);
-    console.log(email);
-    console.log(password);
-    if (name && email && password) {
-      localStorage.setItem("name", name);
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
-      alert("Thanks for Signing Up!");
-    } else {
-      alert("Please fill in all the details");
+
+    const response = await axios.post("http://localhost:3000/user/signup", {
+      name,
+      email,
+      password,
+    });
+    try {
+      if (response.data.token) {
+        localStorage.setItem("token", response.data.token);
+        alert(`Sign up is successful, Happy shopping ${response.data.name}!`);
+        window.location.href = "/";
+      } else if (response.data === "User already exists") {
+        alert("User already exists, please login");
+      } else {
+        alert("Invalid credentials");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 

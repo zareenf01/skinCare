@@ -1,15 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Data from "./data";
 import { ShopContext } from "./shopContext";
+import { productContext } from "./productContext";
 import { useNavigate } from "react-router-dom";
 export default function Details() {
   const { addToCart, cartItems } = useContext(ShopContext);
+  const { products, loading, fetchData } = useContext(productContext);
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   const params = useParams();
   const productId = Number(params.Productid);
 
-  const product = Data.find((product) => product.id === productId);
+  const product = products.find((product) => product.id === productId);
 
   const [wishlist, setWishlist] = useState(false);
 
@@ -23,7 +28,7 @@ export default function Details() {
 
   const cart = () => {
     addToCart(productId);
-    navigate.push(`/cart?productId=${productId}`);
+    navigate(`/cart?productId=${productId}`);
   };
 
   return (
@@ -31,12 +36,12 @@ export default function Details() {
       <h1 className="text-center text-white font-bold text-5xl"></h1>
       {product ? (
         <div>
-          <div className="flex flex-col justify-start items-center p-5  rounded-3xl md:flex-row md:mt-5">
+          <div className="flex flex-col justify-start  p-5  rounded-3xl md:flex-row md:mt-5">
             <div className="flex flex-col justify-center items-center p-5 pt-5 pb-5 m-5 ">
               <img
-                src={product.img}
+                src={product.image}
                 alt=""
-                className="rounded-3xl max-w-xs md:max-w-sm md:mx-10"
+                className="rounded-3xl max-w-xs md:max-w-sm md:mx-10 bg-white"
               />
               <div className="flex items-center justify-center cursor-pointer mt-10">
                 <img
@@ -64,7 +69,7 @@ export default function Details() {
             </div>
 
             <div className="flex flex-col justify-start ml-10 -mt-5 items-center md:max-w-xl md:items-start">
-              <h2 className="text-[#f2c48b] mt-8 text-4xl font-bold text-center md:text-left md:mt-0">
+              <h2 className="text-[#f2c48b] mt-8 text-4xl font-bold text-center md:text-left md:mt-14">
                 {product.name}
               </h2>
               <p className="text-[#f2c48b] mt-5 text-2xl font-bold">

@@ -1,20 +1,25 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function LogIn() {
-  const handleClick = () => {
+  const handleClick = async (e) => {
+    e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-
-    const storedEmail = localStorage.getItem("email");
-    const storedPass = localStorage.getItem("password");
-
-    console.log(email, password);
-    console.log(storedEmail, storedPass);
-
-    if (email === storedEmail && password === storedPass) {
-      alert("LogIn Successful");
-    } else {
-      alert("Invalid email or password");
+    try {
+      const response = await axios.post("http://localhost:3000/user/signin", {
+        email,
+        password,
+      });
+      if (response.data.token) {
+        localStorage.setItem("token", response.data.token);
+        alert(`Welcome back ${response.data.user.name}!`);
+        window.location.href = "/";
+      } else {
+        alert("Invalid email or password");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 

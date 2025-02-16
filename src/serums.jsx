@@ -3,9 +3,9 @@ export default function Serums(props) {
     <>
       <div className="flex flex-col items-center">
         <img
-          src={props.img}
+          src={props.image}
           alt=""
-          className="w-56 m-5 h-56 border-2 border-black  md:mx-10 md:w-60 md:h-72"
+          className="w-56 m-5 h-56 border-2 border-black  md:mx-10 md:w-60 md:h-72 bg-white"
         />
         <div className="flex p-3">
           <h2 className="mx-3 max-w-xs">{props.name}</h2>

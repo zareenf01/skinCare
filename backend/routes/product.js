@@ -17,6 +17,7 @@ router.get("/", async (req, res) => {
 
 router.post("/create", async (req, res) => {
   const { name, description, price, image } = req.body;
+  console.log("Request Body:", req.body);
   try {
     const newProduct = await prisma.product.create({
       data: {
@@ -29,7 +30,9 @@ router.post("/create", async (req, res) => {
     res.json(newProduct);
   } catch (error) {
     console.log(error);
-    res.status(500).json("Cannot create product");
+    res
+      .status(500)
+      .json({ error: "Cannot create product", details: error.message });
   }
 });
 

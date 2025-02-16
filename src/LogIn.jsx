@@ -2,12 +2,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function LogIn() {
+  const baseUrl = import.meta.env.VITE_BASE_URL;
   const handleClick = async (e) => {
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     try {
-      const response = await axios.post("http://localhost:3000/user/signin", {
+      const response = await axios.post(`${baseUrl}/user/signin`, {
         email,
         password,
       });

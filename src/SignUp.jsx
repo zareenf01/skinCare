@@ -2,6 +2,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function SignUp() {
+  const baseUrl = import.meta.env.VITE_BASE_URL;
   const HandleClick = async (e) => {
     e.preventDefault();
 
@@ -9,7 +10,7 @@ export default function SignUp() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const response = await axios.post("http://localhost:3000/user/signup", {
+    const response = await axios.post(`${baseUrl}/user/signup`, {
       name,
       email,
       password,

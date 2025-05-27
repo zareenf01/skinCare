@@ -36,4 +36,19 @@ router.post("/create", async (req, res) => {
   }
 });
 
+router.delete("/delete/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deletedProduct = await prisma.product.delete({
+      where: {
+        id: parseInt(id),
+      },
+    });
+    res.json({ message: "Product deleted successfully", deletedProduct });
+  } catch (error) {
+    console.log("Cannot delete the product", error);
+    res.status(500).json({ error: "Failed to delete product" });
+  }
+});
+
 module.exports = router;

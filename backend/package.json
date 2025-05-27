@@ -6,22 +6,28 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "prisma generate && prisma migrate deploy"
+    "build": "prisma generate && prisma migrate deploy",
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@prisma/client": "^6.3.1",
+    "@prisma/client": "^6.8.2",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "jsonwebtoken": "^9.0.2",
-    "prisma": "^6.3.1"
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "@types/node": "^22.15.21",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.8.2",
+    "ts-node": "^10.9.2"
   }
 }
